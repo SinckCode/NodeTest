@@ -1,0 +1,28 @@
+# YML | Docker Compose file
+#clave: valor
+
+services:
+  box3:
+    image: alpine
+    container_name: Box3
+    command: sleep 3600
+
+  box4:
+    image: alpine
+    container_name: Box4
+    command: sleep 3600
+
+  db:
+    image: mysql
+    container_name: MySQLDBB
+    ports:
+      - "3312:3306"
+      - "3313:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=12345
+    volumes:
+     # - ./data:/var/lib/mysql
+      - mysqlsuperdb:/var/lib/mysql
+
+volumes:
+  mysqlsuperdb:
