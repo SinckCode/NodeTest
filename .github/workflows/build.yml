@@ -15,4 +15,4 @@ jobs:
             - name: Construir imagen
               run: docker build -t onesto/node-test:latest .
             - name: Publicar en Docker Hub
-              run: docker push onesto/node-test:latest .
+              run: docker push onesto/node-test:latest
