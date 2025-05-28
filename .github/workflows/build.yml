@@ -11,4 +11,6 @@ jobs:
             - name: Clonar repositorio
               uses: actions/checkout@v4
             - name: Construir imagen
-              run: docker build -t node-test:1 .
+              run: docker build -t onesto/node-test:latest .
+            - name: Publicar en Docker Hub
+              run: docker push onesto/node-test:latest .
