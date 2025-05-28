@@ -8,6 +8,7 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - name: Mi primer comando
-              run: echo "Hello, world!"
-            
+            - name: Clonar repositorio
+              uses: actions/checkout@v4
+            - name: Construir imagen
+              run: docker build -t node-test:1 .
